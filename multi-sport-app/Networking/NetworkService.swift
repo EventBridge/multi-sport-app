@@ -8,7 +8,7 @@
 import Foundation
 
 struct NetworkService {
-    let APIKEY = "779d6d6db8msha0f2f748844a1d3p177770jsnde50e0581e80"
+    let APIKEY = "8d5bd343c6mshba3e1a0a7d42930p1d16a5jsn211d48e356bd"
     let APIHOST = "api-nba-v1.p.rapidapi.com"
     
     static let shared = NetworkService()
