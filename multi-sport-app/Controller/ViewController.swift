@@ -17,15 +17,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // Test fetch teams
-        NetworkService.shared.fetchTeams { [weak self] (result) in
-            switch result {
-            case.success(let teams):
-                self?.teams = teams
-                print("The decoded data is: \(self?.teams)")
-            case.failure(let error):
-                print("The error is: \(error.localizedDescription)")
-            }
-        }
+//        NetworkService.shared.fetchTeams { [weak self] (result) in
+//            switch result {
+//            case.success(let teams):
+//                self?.teams = teams
+//                print("The decoded data is: \(self?.teams)")
+//            case.failure(let error):
+//                print("The error is: \(error.localizedDescription)")
+//            }
+//        }
         
         // Test fetch players
         NetworkService.shared.fetchPlayers(team: "1", season: "2021") { [weak self] (result) in
