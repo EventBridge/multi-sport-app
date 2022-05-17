@@ -8,26 +8,28 @@
 import Foundation
 
 struct NetworkService {
-    let APIKEY = "8d5bd343c6mshba3e1a0a7d42930p1d16a5jsn211d48e356bd"
-    let APIHOST = "api-nba-v1.p.rapidapi.com"
     
     static let shared = NetworkService()
     
     private init() {}
     
     func fetchTeams(completion: @escaping(Result<[Team], Error>) -> Void) {
-        request(route: .allTeams, method: .get, completion: completion)
+        request(api: .nbaApi, route: .allTeams, method: .get, completion: completion)
     }
     
     func fetchPlayers(team: String, season: String, completion: @escaping(Result<[Player], Error>) -> Void) {
-        request(route: .allPlayers, method: .get, parameters: ["team": team, "season": season], completion: completion)
+        request(api: .nbaApi, route: .allPlayers, method: .get, parameters: ["team": team, "season": season], completion: completion)
     }
     
-    private func request<T: Decodable>(route: Route,
+    func fetchArticles(query: String, completion: @escaping(Result<[Article], Error>) -> Void) {
+        request(api: .newsApi, route: .allArticles, method: .get, parameters: ["q": query], completion: completion)
+    }
+    
+    private func request<T: Decodable>(api: Api, route: Route,
                                        method: Method,
                                        parameters: [String: Any]? = nil,
                                        completion: @escaping(Result<T, Error>) -> Void) {
-        guard let request = createRequest(route: route, method: method, parameters: parameters) else {
+        guard let request = createRequest(api: api, route: route, method: method, parameters: parameters) else {
             completion(.failure(AppError.unknownError))
             return
         }
@@ -44,14 +46,18 @@ struct NetworkService {
             }
             
             DispatchQueue.main.async {
-                // decode our result and send back to the user
-                self.handleResponse(result: result, completion: completion)
+                switch api {
+                case .nbaApi:
+                    rapidResponse(result: result, completion: completion)
+                case .newsApi:
+                    newsResponse(result: result, completion: completion)
+                }
             }
         }.resume()
     }
     
-    private func handleResponse<T: Decodable>(result: Result<Data, Error>?,
-                                completion: (Result<T, Error>) -> Void) {
+    private func rapidResponse<T: Decodable>(result: Result<Data, Error>?,
+                               completion: (Result<T, Error>) -> Void) {
         guard let result = result else {
             completion(.failure(AppError.unknownError))
             return
@@ -60,7 +66,7 @@ struct NetworkService {
         switch result {
         case .success(let data):
             let decoder = JSONDecoder()
-            guard let response = try? decoder.decode(ApiResponse<T>.self, from: data) else {
+            guard let response = try? decoder.decode(RapidResponse<T>.self, from: data) else {
                 completion(.failure(AppError.errorDecoding))
                 return
             }
@@ -84,21 +90,43 @@ struct NetworkService {
         }
     }
     
+    private func newsResponse<T: Decodable>(result: Result<Data, Error>?,
+                               completion: (Result<T, Error>) -> Void) {
+        guard let result = result else {
+            completion(.failure(AppError.unknownError))
+            return
+        }
+        
+        switch result {
+        case .success(let data):
+            let decoder = JSONDecoder()
+            guard let response = try? decoder.decode(NewsResponse<T>.self, from: data) else {
+                completion(.failure(AppError.errorDecoding))
+                return
+            }
+            if let decodedData = response.articles {
+                completion(.success(decodedData))
+            } else {
+                completion(.failure(AppError.noData))
+            }
+        case .failure(let error):
+            completion(.failure(error))
+        }
+    }
+    
     /// This function helps us to generate a urlRequest
     /// - Parameters:
     ///   - route: the path to the resource in the backend
     ///   - method: the type of request to be made
     ///   - parameters: whatever extra information you need to pass to the backend
     /// - Returns: URLRequest
-    private func createRequest(route: Route,
+    private func createRequest(api: Api, route: Route,
                                method: Method,
                                parameters: [String: Any]? = nil) -> URLRequest? {
-        let urlString = Route.baseUrl + route.description
+        let urlString = api.baseUrl + route.description
         guard let url = URL(string: urlString) else { return nil }
         var urlRequest = URLRequest(url: url)
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.addValue(APIHOST, forHTTPHeaderField: "X-RapidAPI-Host")
-        urlRequest.addValue(APIKEY, forHTTPHeaderField: "X-RapidAPI-Key")
+        urlRequest.allHTTPHeaderFields = api.headers
         urlRequest.httpMethod = method.rawValue
         
         if let params = parameters {
