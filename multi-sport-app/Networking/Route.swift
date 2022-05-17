@@ -8,10 +8,10 @@
 import Foundation
 
 enum Route {
-    static let baseUrl = "https://api-nba-v1.p.rapidapi.com"
     
     case allTeams
     case allPlayers
+    case allArticles
     
     var description: String {
         switch self {
@@ -19,6 +19,8 @@ enum Route {
             return "/teams"
         case .allPlayers:
             return "/players"
+        case .allArticles:
+            return "/everything"
         }
     }
 }

@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E39BC742283361F7008D68E8 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BC741283361F7008D68E8 /* Api.swift */; };
+		E39BC746283369DB008D68E8 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BC745283369DB008D68E8 /* Article.swift */; };
+		E39BC7482833728E008D68E8 /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BC7472833728E008D68E8 /* NewsResponse.swift */; };
 		E3ADD71E2830B9BC0090B0E1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ADD71D2830B9BC0090B0E1 /* NetworkService.swift */; };
 		E3ADD7202830C29F0090B0E1 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ADD71F2830C29F0090B0E1 /* Route.swift */; };
 		E3ADD7222830E5C70090B0E1 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ADD7212830E5C70090B0E1 /* Method.swift */; };
 		E3ADD7242830F2B00090B0E1 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ADD7232830F2B00090B0E1 /* AppError.swift */; };
-		E3ADD7262830F7610090B0E1 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ADD7252830F7610090B0E1 /* ApiResponse.swift */; };
+		E3ADD7262830F7610090B0E1 /* RapidResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ADD7252830F7610090B0E1 /* RapidResponse.swift */; };
 		E3ADD72B283100D10090B0E1 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ADD72A283100D10090B0E1 /* Team.swift */; };
 		E3ADD72D283148820090B0E1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ADD72C283148820090B0E1 /* Player.swift */; };
 		E3CF72E3282FE84A00F899B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF72E2282FE84A00F899B0 /* AppDelegate.swift */; };
@@ -23,11 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E39BC741283361F7008D68E8 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		E39BC745283369DB008D68E8 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		E39BC7472833728E008D68E8 /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
 		E3ADD71D2830B9BC0090B0E1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E3ADD71F2830C29F0090B0E1 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		E3ADD7212830E5C70090B0E1 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		E3ADD7232830F2B00090B0E1 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
-		E3ADD7252830F7610090B0E1 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		E3ADD7252830F7610090B0E1 /* RapidResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidResponse.swift; sourceTree = "<group>"; };
 		E3ADD72A283100D10090B0E1 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		E3ADD72C283148820090B0E1 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E3CF72DF282FE84A00F899B0 /* multi-sport-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "multi-sport-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,7 +64,9 @@
 				E3ADD71F2830C29F0090B0E1 /* Route.swift */,
 				E3ADD7212830E5C70090B0E1 /* Method.swift */,
 				E3ADD7232830F2B00090B0E1 /* AppError.swift */,
-				E3ADD7252830F7610090B0E1 /* ApiResponse.swift */,
+				E3ADD7252830F7610090B0E1 /* RapidResponse.swift */,
+				E39BC741283361F7008D68E8 /* Api.swift */,
+				E39BC7472833728E008D68E8 /* NewsResponse.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -68,6 +76,7 @@
 			children = (
 				E3ADD72A283100D10090B0E1 /* Team.swift */,
 				E3ADD72C283148820090B0E1 /* Player.swift */,
+				E39BC745283369DB008D68E8 /* Article.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,7 +206,10 @@
 				E3ADD72B283100D10090B0E1 /* Team.swift in Sources */,
 				E3ADD71E2830B9BC0090B0E1 /* NetworkService.swift in Sources */,
 				E3ADD7202830C29F0090B0E1 /* Route.swift in Sources */,
-				E3ADD7262830F7610090B0E1 /* ApiResponse.swift in Sources */,
+				E39BC742283361F7008D68E8 /* Api.swift in Sources */,
+				E39BC7482833728E008D68E8 /* NewsResponse.swift in Sources */,
+				E3ADD7262830F7610090B0E1 /* RapidResponse.swift in Sources */,
+				E39BC746283369DB008D68E8 /* Article.swift in Sources */,
 				E3CF72E5282FE84A00F899B0 /* SceneDelegate.swift in Sources */,
 				E3ADD72D283148820090B0E1 /* Player.swift in Sources */,
 				E3ADD7242830F2B00090B0E1 /* AppError.swift in Sources */,
