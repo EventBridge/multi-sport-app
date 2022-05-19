@@ -25,6 +25,14 @@ struct NetworkService {
         request(api: .newsApi, route: .allArticles, method: .get, parameters: ["q": query], completion: completion)
     }
     
+    func fetchGames(date: String, completion: @escaping(Result<[Game], Error>) -> Void) {
+        request(api: .nbaApi , route: .allGames, method: .get, parameters: ["date": date], completion: completion)
+    }
+    
+    func fetchStandings(season: String, league: String, completion: @escaping(Result<[TeamStanding], Error>) -> Void) {
+        request(api: .nbaApi , route: .standings, method: .get, parameters: ["season": season, "league": league], completion: completion)
+    }
+    
     private func request<T: Decodable>(api: Api, route: Route,
                                        method: Method,
                                        parameters: [String: Any]? = nil,
