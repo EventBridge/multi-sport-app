@@ -41,6 +41,7 @@
 		E3CF72EA282FE84A00F899B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3CF72E8282FE84A00F899B0 /* Main.storyboard */; };
 		E3CF72EC282FE84B00F899B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3CF72EB282FE84B00F899B0 /* Assets.xcassets */; };
 		E3CF72EF282FE84B00F899B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3CF72ED282FE84B00F899B0 /* LaunchScreen.storyboard */; };
+		E3FD6DAF28366097007E6FFB /* TeamStanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FD6DAE28366097007E6FFB /* TeamStanding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		E3CF72EB282FE84B00F899B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3CF72EE282FE84B00F899B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3CF72F0282FE84B00F899B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3FD6DAE28366097007E6FFB /* TeamStanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStanding.swift; sourceTree = "<group>"; };
 		FD0536106D45ED8EDB38D456 /* Pods-multi-sport-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multi-sport-app.release.xcconfig"; path = "Target Support Files/Pods-multi-sport-app/Pods-multi-sport-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 				E3ADD72C283148820090B0E1 /* Player.swift */,
 				E39BC745283369DB008D68E8 /* Article.swift */,
 				E3CCF27E28364A47006BA7BC /* Game.swift */,
+				E3FD6DAE28366097007E6FFB /* TeamStanding.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				E39BC746283369DB008D68E8 /* Article.swift in Sources */,
 				636F5FE52835F2350078E919 /* TableDetailVC.swift in Sources */,
 				E3CCF27628360C0A006BA7BC /* TeamCollectionViewCell.swift in Sources */,
+				E3FD6DAF28366097007E6FFB /* TeamStanding.swift in Sources */,
 				63463BF528353D4E008015F8 /* TeamsVC.swift in Sources */,
 				E3CF72E5282FE84A00F899B0 /* SceneDelegate.swift in Sources */,
 				E3CCF270283601E8006BA7BC /* MatchTableViewCell.swift in Sources */,
