@@ -9,8 +9,18 @@ import UIKit
 
 class MatchVC: UIViewController {
     
+    var games: [Game] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NetworkService.shared.fetchGames(date: "2022-05-18") { [weak self] (result) in
+            switch result {
+            case.success(let games):
+                self?.games = games
+            case.failure(let error):
+                print("The error is: \(error.localizedDescription)")
+            }
+        }
     }
 }

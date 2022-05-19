@@ -12,6 +12,7 @@ enum Route {
     case allTeams
     case allPlayers
     case allArticles
+    case allGames
     
     var description: String {
         switch self {
@@ -21,6 +22,8 @@ enum Route {
             return "/players"
         case .allArticles:
             return "/everything"
+        case .allGames:
+            return "/games"
         }
     }
 }

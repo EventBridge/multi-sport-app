@@ -25,6 +25,10 @@ struct NetworkService {
         request(api: .newsApi, route: .allArticles, method: .get, parameters: ["q": query], completion: completion)
     }
     
+    func fetchGames(date: String, completion: @escaping(Result<[Game], Error>) -> Void) {
+        request(api: .nbaApi , route: .allGames, method: .get, parameters: ["date": date], completion: completion)
+    }
+    
     private func request<T: Decodable>(api: Api, route: Route,
                                        method: Method,
                                        parameters: [String: Any]? = nil,
@@ -38,8 +42,8 @@ struct NetworkService {
             var result: Result<Data, Error>?
             if let data = data {
                 result = .success(data)
-                //let responseString = String(data: data, encoding: .utf8) ?? "Could not turn data into string"
-                //print("The response is:\n\(responseString)")
+                let responseString = String(data: data, encoding: .utf8) ?? "Could not turn data into string"
+                print("The response is:\n\(responseString)")
             } else if let error = error {
                 result = .failure(error)
                 print("The error is: \(error.localizedDescription)")
