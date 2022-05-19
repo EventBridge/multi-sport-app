@@ -18,9 +18,9 @@ class TeamCollectionViewCell: UICollectionViewCell {
     
     
     func setup(team: Team) {
-        logoImage.kf.setImage(with: URL(string: team.logo ?? ""))
-        nameLabel.text = team.name
-        cityLabel.text = team.city
+        logoImage.kf.setImage(with: URL(string: team.logo ?? "No image found"))
+        nameLabel.text = team.name ?? "No name found"
+        cityLabel.text = team.city ?? "No city found"
     }
 
 }

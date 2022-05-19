@@ -17,7 +17,7 @@ class PlayerCollectionViewCell: UICollectionViewCell {
     
     func setup(player: Player) {
         playerNameLabel.text = player.firstname! + player.lastname!
-        positionLabel.text = player.leagues?.standard?.pos
+        positionLabel.text = player.leagues?.standard?.pos ?? "No position found"
     }
     
 
