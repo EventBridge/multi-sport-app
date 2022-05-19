@@ -199,10 +199,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnA-cm-4NA">
-                                <rect key="frame" x="20" y="155" width="100" height="22"/>
+                                <rect key="frame" x="20" y="155" width="200" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Avx-Wz-cNh"/>
-                                    <constraint firstAttribute="width" constant="100" id="kef-3e-pAz"/>
+                                    <constraint firstAttribute="width" constant="200" id="kef-3e-pAz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -229,16 +229,6 @@
                                     <constraint firstAttribute="width" constant="414" id="Spe-vs-iVm"/>
                                     <constraint firstAttribute="height" constant="382" id="VIe-me-N4g"/>
                                 </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="eSI-Ma-MKv">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eSI-Ma-MKv" id="GNv-Nu-R9j">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eol-J8-uXc"/>
@@ -260,6 +250,7 @@
                     <navigationItem key="navigationItem" title="News" id="urC-zU-OMh"/>
                     <connections>
                         <outlet property="currDateLabel" destination="mnA-cm-4NA" id="4PU-8h-uFT"/>
+                        <outlet property="newsTableView" destination="ETY-4I-yYz" id="lAF-hR-YEI"/>
                         <segue destination="3Ha-J1-3Wr" kind="show" id="vEM-Pp-pDt"/>
                     </connections>
                 </viewController>
