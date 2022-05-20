@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class TeamsVC: UIViewController {
     @IBOutlet weak var teamCollectionView: UICollectionView!
@@ -20,6 +21,7 @@ class TeamsVC: UIViewController {
         
         registerCells()
         
+        ProgressHUD.show()
         // fetch teams
         NetworkService.shared.fetchTeams { [weak self] (result) in
             switch result {
@@ -27,8 +29,10 @@ class TeamsVC: UIViewController {
                 self?.teams = teams
                 //print("The decoded data is:\n \(self?.teams)")
                 self?.teamCollectionView.reloadData()
+                ProgressHUD.dismiss()
             case.failure(let error):
                 print("The error is: \(error.localizedDescription)")
+                ProgressHUD.showError(error.localizedDescription)
             }
         }
         

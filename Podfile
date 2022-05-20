@@ -7,5 +7,6 @@ target 'multi-sport-app' do
 
   # Pods for multi-sport-app
   pod "Kingfisher"
+  pod "ProgressHUD"
 
 end

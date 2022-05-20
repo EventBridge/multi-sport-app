@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class MatchVC: UIViewController {
     
@@ -15,12 +16,15 @@ class MatchVC: UIViewController {
         super.viewDidLoad()
         
         // Comment or uncomment when using, saves me api money
+//        ProgressHUD.show()
 //        NetworkService.shared.fetchGames(date: "2022-05-18") { [weak self] (result) in
 //            switch result {
 //            case.success(let games):
 //                self?.games = games
+//                ProgressHUD.dismiss()
 //            case.failure(let error):
 //                print("The error is: \(error.localizedDescription)")
+//                ProgressHUD.showError(error.localisedDescription)
 //            }
 //        }
     }
