@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import ProgressHUD
 
 class NewsVC: UIViewController {
     
@@ -29,6 +30,7 @@ class NewsVC: UIViewController {
         latestNewsDesc.layer.cornerRadius = 20
         latestNewsDesc.layer.masksToBounds = true
         
+        ProgressHUD.show()
         //news api //get instantly after load
         NetworkService.shared.fetchArticles(query: "nba", sortBy: "publishedAt", language: "en", domains: "nytimes.com") { [weak self] (result) in
             switch result {
@@ -37,8 +39,10 @@ class NewsVC: UIViewController {
                 self?.newsTableView.reloadData()
                 //set up latest article view
                 self?.setupLatestNews(article: articles[0])
+                ProgressHUD.dismiss()
             case.failure(let error):
                 print("The error is: \(error.localizedDescription)")
+                ProgressHUD.showError(error.localizedDescription)
             }
         }
         

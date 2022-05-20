@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class PlayerVC: UIViewController {
     
@@ -20,14 +21,17 @@ class PlayerVC: UIViewController {
         
         registerCells()
         
+        ProgressHUD.show()
         // fetch players
         NetworkService.shared.fetchPlayers(team: "1", season: "2021") { [weak self] (result) in
             switch result {
             case.success(let players):
                 self?.players = players
                 self?.playerCollectionView.reloadData()
+                ProgressHUD.dismiss()
             case.failure(let error):
                 print("The error is: \(error.localizedDescription)")
+                ProgressHUD.showError(error.localizedDescription)
             }
         }
         

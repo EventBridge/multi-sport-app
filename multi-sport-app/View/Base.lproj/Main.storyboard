@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RnN-3Z-z9G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RnN-3Z-z9G">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -40,8 +40,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mSs-JG-ahK">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="5" y="88" width="404" height="725"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4rT-Ic-7xQ">
                                     <size key="itemSize" width="128" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -61,12 +61,12 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vvY-5X-eAa"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstItem="vvY-5X-eAa" firstAttribute="trailing" secondItem="mSs-JG-ahK" secondAttribute="trailing" id="CBf-th-tu1"/>
+                            <constraint firstItem="vvY-5X-eAa" firstAttribute="trailing" secondItem="mSs-JG-ahK" secondAttribute="trailing" constant="5" id="CBf-th-tu1"/>
                             <constraint firstItem="mSs-JG-ahK" firstAttribute="top" secondItem="vvY-5X-eAa" secondAttribute="top" id="SWZ-BE-oKs"/>
                             <constraint firstItem="vvY-5X-eAa" firstAttribute="bottom" secondItem="mSs-JG-ahK" secondAttribute="bottom" id="b5F-Jn-CVD"/>
-                            <constraint firstItem="mSs-JG-ahK" firstAttribute="leading" secondItem="vvY-5X-eAa" secondAttribute="leading" id="dY6-U2-bFT"/>
+                            <constraint firstItem="mSs-JG-ahK" firstAttribute="leading" secondItem="vvY-5X-eAa" secondAttribute="leading" constant="5" id="dY6-U2-bFT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Team" id="GeY-Hh-wja"/>
@@ -684,6 +684,9 @@
         <image name="teamIconFill" width="45" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

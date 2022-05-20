@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDT-lP-Ctx">
                         <rect key="frame" x="0.0" y="0.0" width="128" height="200"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kU3-A3-iKU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kU3-A3-iKU">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="5Ka-tg-7Tp"/>
@@ -28,24 +28,27 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgW-4c-fhv" userLabel="City">
-                                <rect key="frame" x="8" y="179.5" width="112" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="8" y="179" width="112" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8S-jX-Lry" userLabel="Name">
-                                <rect key="frame" x="8" y="154" width="112" height="20.5"/>
+                                <rect key="frame" x="8" y="141" width="112" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="CUU-bc-4c8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Z8S-jX-Lry" secondAttribute="trailing" constant="8" id="32u-1o-yRU"/>
                             <constraint firstAttribute="trailing" secondItem="kU3-A3-iKU" secondAttribute="trailing" id="AAa-S0-Lmp"/>
                             <constraint firstItem="HgW-4c-fhv" firstAttribute="top" secondItem="Z8S-jX-Lry" secondAttribute="bottom" constant="5" id="Csp-rl-hmI"/>
-                            <constraint firstAttribute="bottom" secondItem="HgW-4c-fhv" secondAttribute="bottom" id="ImS-Oc-0iH"/>
+                            <constraint firstAttribute="bottom" secondItem="HgW-4c-fhv" secondAttribute="bottom" constant="5" id="ImS-Oc-0iH"/>
                             <constraint firstItem="kU3-A3-iKU" firstAttribute="leading" secondItem="TDT-lP-Ctx" secondAttribute="leading" id="XE8-BJ-ss2"/>
                             <constraint firstItem="Z8S-jX-Lry" firstAttribute="leading" secondItem="TDT-lP-Ctx" secondAttribute="leading" constant="8" id="hFd-lY-EhY"/>
                             <constraint firstItem="HgW-4c-fhv" firstAttribute="leading" secondItem="TDT-lP-Ctx" secondAttribute="leading" constant="8" id="tm9-G4-VGg"/>
@@ -71,8 +74,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
