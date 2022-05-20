@@ -21,8 +21,8 @@ struct NetworkService {
         request(api: .nbaApi, route: .allPlayers, method: .get, parameters: ["team": team, "season": season], completion: completion)
     }
     
-    func fetchArticles(query: String, completion: @escaping(Result<[Article], Error>) -> Void) {
-        request(api: .newsApi, route: .allArticles, method: .get, parameters: ["q": query], completion: completion)
+    func fetchArticles(query: String, sortBy: String, language: String, domains: String, completion: @escaping(Result<[Article], Error>) -> Void) {
+        request(api: .newsApi, route: .allArticles, method: .get, parameters: ["q": query, "sortBy": sortBy, "language": language, "domains": domains], completion: completion)
     }
     
     func fetchGames(date: String, completion: @escaping(Result<[Game], Error>) -> Void) {
@@ -46,8 +46,8 @@ struct NetworkService {
             var result: Result<Data, Error>?
             if let data = data {
                 result = .success(data)
-                //let responseString = String(data: data, encoding: .utf8) ?? "Could not turn data into string"
-                //print("The response is:\n\(responseString)")
+                let responseString = String(data: data, encoding: .utf8) ?? "Could not turn data into string"
+                print("The response is:\n\(responseString)")
             } else if let error = error {
                 result = .failure(error)
                 print("The error is: \(error.localizedDescription)")

@@ -33,7 +33,7 @@ class NewsVC: UIViewController {
         newsTableView.register(nib, forCellReuseIdentifier: ArticleTableViewCell.identifier)
         
         //news api
-        NetworkService.shared.fetchArticles(query: "nba") { [weak self] (result) in
+        NetworkService.shared.fetchArticles(query: "nba", sortBy: "publishedAt", language: "en", domains: "espn.com") { [weak self] (result) in
             switch result {
             case.success(let articles):
                 self?.articles = articles
