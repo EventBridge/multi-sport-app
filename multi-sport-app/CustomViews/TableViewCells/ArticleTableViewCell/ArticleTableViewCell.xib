@@ -16,13 +16,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News desc" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IT-Wm-WUl">
-                        <rect key="frame" x="158" y="32" width="215" height="60"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News desc" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IT-Wm-WUl">
+                        <rect key="frame" x="158" y="6" width="215" height="60"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="bG3-SX-0ON"/>
                             <constraint firstAttribute="width" constant="215" id="kEh-me-uZo"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -33,23 +33,35 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="durationFromNow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fax-KC-aJX">
-                        <rect key="frame" x="158" y="7" width="150" height="20"/>
+                        <rect key="frame" x="158" y="74" width="100" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="150" id="BPe-NV-211"/>
+                            <constraint firstAttribute="width" constant="100" id="BPe-NV-211"/>
                             <constraint firstAttribute="height" constant="20" id="VP9-a9-F5m"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="publisher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeS-9o-jYW">
+                        <rect key="frame" x="253" y="74" width="120" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="A1V-76-QqV"/>
+                            <constraint firstAttribute="width" constant="120" id="EKe-Bj-0bF"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="aeS-9o-jYW" secondAttribute="trailing" constant="7" id="1eI-Il-dGK"/>
+                    <constraint firstAttribute="bottom" secondItem="aeS-9o-jYW" secondAttribute="bottom" constant="6" id="5rk-45-1r9"/>
                     <constraint firstAttribute="bottom" secondItem="oSo-8p-nBN" secondAttribute="bottom" id="FCi-Ip-ire"/>
                     <constraint firstItem="1IT-Wm-WUl" firstAttribute="leading" secondItem="oSo-8p-nBN" secondAttribute="trailing" constant="8" id="QSS-VX-rH7"/>
                     <constraint firstItem="oSo-8p-nBN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Vk8-Mb-lSJ"/>
+                    <constraint firstItem="1IT-Wm-WUl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="d1G-6V-h6w"/>
+                    <constraint firstItem="Fax-KC-aJX" firstAttribute="top" secondItem="1IT-Wm-WUl" secondAttribute="bottom" constant="8" id="egA-tA-gKZ"/>
                     <constraint firstItem="Fax-KC-aJX" firstAttribute="leading" secondItem="oSo-8p-nBN" secondAttribute="trailing" constant="8" id="iS2-4Y-LR5"/>
-                    <constraint firstItem="1IT-Wm-WUl" firstAttribute="top" secondItem="Fax-KC-aJX" secondAttribute="bottom" constant="5" id="ktP-0Z-cXA"/>
-                    <constraint firstItem="Fax-KC-aJX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="odX-qc-5pq"/>
                     <constraint firstItem="oSo-8p-nBN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ww7-kk-jZC"/>
                 </constraints>
             </tableViewCellContentView>
@@ -58,6 +70,7 @@
                 <outlet property="durationFromNowLabel" destination="Fax-KC-aJX" id="d2m-JA-LwA"/>
                 <outlet property="newsDescLabel" destination="1IT-Wm-WUl" id="gTJ-cs-Jis"/>
                 <outlet property="newsImageView" destination="oSo-8p-nBN" id="XLl-KL-S2U"/>
+                <outlet property="publisherLabel" destination="aeS-9o-jYW" id="z5x-gy-Bab"/>
             </connections>
             <point key="canvasLocation" x="94.20289855072464" y="51.5625"/>
         </tableViewCell>

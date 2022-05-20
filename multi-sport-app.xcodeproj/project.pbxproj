@@ -185,7 +185,6 @@
 		E3CCF26B28360139006BA7BC /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				E3ED7D5828375B9900DF4DD3 /* CustomizedTabbar.swift */,
 				E3CCF27228360BE8006BA7BC /* CollectionViewCells */,
 				E3CCF26C2836014A006BA7BC /* TableViewCells */,
 			);
@@ -267,6 +266,7 @@
 		E3ED7D5A28375BE000DF4DD3 /* CustomClasses */ = {
 			isa = PBXGroup;
 			children = (
+				E3ED7D5828375B9900DF4DD3 /* CustomizedTabbar.swift */,
 			);
 			path = CustomClasses;
 			sourceTree = "<group>";

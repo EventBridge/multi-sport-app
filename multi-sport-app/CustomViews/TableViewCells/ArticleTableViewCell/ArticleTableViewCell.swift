@@ -13,6 +13,7 @@ class ArticleTableViewCell: UITableViewCell {
     static let identifier = "ArticleTableViewCell"
 
     
+    @IBOutlet weak var publisherLabel: UILabel!
     @IBOutlet weak var newsImageView: UIImageView!
     @IBOutlet weak var durationFromNowLabel: UILabel!
     @IBOutlet weak var newsDescLabel: UILabel!
@@ -27,6 +28,7 @@ class ArticleTableViewCell: UITableViewCell {
         newsImageView.kf.setImage(with: URL(string: article.urlToImage ?? "No image found"))
         durationFromNowLabel.text = date?.timeAgo()
         newsDescLabel.text = article.title ?? "No title found"
+        publisherLabel.text = article.source?.name ?? ""
     }
 
     override func awakeFromNib() {
