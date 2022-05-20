@@ -24,8 +24,13 @@ class NewsVC: UIViewController {
         newsTableView.delegate = self
         newsTableView.dataSource = self
         
+        //latest news view set corner radius
+        latestNewsImage.layer.cornerRadius = 20
+        latestNewsDesc.layer.cornerRadius = 20
+        latestNewsDesc.layer.masksToBounds = true
+        
         //news api //get instantly after load
-        NetworkService.shared.fetchArticles(query: "nba", sortBy: "publishedAt", language: "en", domains: "espn.com") { [weak self] (result) in
+        NetworkService.shared.fetchArticles(query: "nba", sortBy: "publishedAt", language: "en", domains: "nytimes.com") { [weak self] (result) in
             switch result {
             case.success(let articles):
                 self?.articles = articles
