@@ -268,7 +268,7 @@
                         <outlet property="latestNewsDesc" destination="OjM-06-RSZ" id="2NS-Ta-vuf"/>
                         <outlet property="latestNewsImage" destination="R0T-fG-HYB" id="ym9-EA-b7R"/>
                         <outlet property="newsTableView" destination="ETY-4I-yYz" id="lAF-hR-YEI"/>
-                        <segue destination="3Ha-J1-3Wr" kind="show" id="vEM-Pp-pDt"/>
+                        <segue destination="3Ha-J1-3Wr" kind="show" identifier="goToNewsDetail" id="vEM-Pp-pDt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3q-Ux-aYc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -613,34 +613,53 @@
         <!--News Details-->
         <scene sceneID="4FU-il-tqx">
             <objects>
-                <viewController id="3Ha-J1-3Wr" customClass="NewsDetailVC" customModule="multi_sport_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsDetailVC" id="3Ha-J1-3Wr" customClass="NewsDetailVC" customModule="multi_sport_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ASy-V3-Fva">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzl-91-qUu">
-                                <rect key="frame" x="191" y="98" width="33" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzl-91-qUu">
+                                <rect key="frame" x="20" y="98" width="374" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="Lnd-QV-Hcv"/>
+                                    <constraint firstAttribute="height" constant="60" id="Pts-vF-A49"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBd-cg-prn">
+                                <rect key="frame" x="20" y="194" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="EN6-fd-O4h"/>
+                                    <constraint firstAttribute="width" constant="200" id="UOf-G1-S7v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5QW-Pm-Cgf">
+                                <rect key="frame" x="20" y="220" width="374" height="196"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="NVF-wt-vgf"/>
+                                    <constraint firstAttribute="height" constant="196" id="nHy-E6-RTn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jQ-JQ-VLC">
+                                <rect key="frame" x="20" y="426" width="374" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="sUe-8j-QwO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jD-K6-DqL">
-                                <rect key="frame" x="20" y="158" width="71" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBd-cg-prn">
-                                <rect key="frame" x="20" y="184" width="74" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5QW-Pm-Cgf">
-                                <rect key="frame" x="20" y="213" width="374" height="196"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="News content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jQ-JQ-VLC">
-                                <rect key="frame" x="20" y="433" width="374" height="360"/>
+                                <rect key="frame" x="20" y="168" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Med-jd-ZWJ"/>
+                                    <constraint firstAttribute="width" constant="200" id="gk3-QQ-00s"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -649,21 +668,32 @@
                         <viewLayoutGuide key="safeArea" id="ylC-ED-lkM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1jD-K6-DqL" firstAttribute="leading" secondItem="ylC-ED-lkM" secondAttribute="leading" constant="20" id="1Pi-oi-7wJ"/>
                             <constraint firstItem="nzl-91-qUu" firstAttribute="centerX" secondItem="ASy-V3-Fva" secondAttribute="centerX" id="1cR-6Y-olQ"/>
                             <constraint firstItem="0jQ-JQ-VLC" firstAttribute="leading" secondItem="ylC-ED-lkM" secondAttribute="leading" constant="20" id="2lf-bu-EUX"/>
-                            <constraint firstItem="1jD-K6-DqL" firstAttribute="top" secondItem="ylC-ED-lkM" secondAttribute="top" constant="70" id="Bpl-MV-oBW"/>
+                            <constraint firstItem="nzl-91-qUu" firstAttribute="leading" secondItem="ylC-ED-lkM" secondAttribute="leading" constant="20" id="3XW-kN-d0k"/>
+                            <constraint firstItem="hBd-cg-prn" firstAttribute="top" secondItem="1jD-K6-DqL" secondAttribute="bottom" constant="5" id="HIY-RB-TtU"/>
+                            <constraint firstItem="1jD-K6-DqL" firstAttribute="leading" secondItem="ylC-ED-lkM" secondAttribute="leading" constant="20" id="Iwq-Lz-unS"/>
                             <constraint firstItem="5QW-Pm-Cgf" firstAttribute="centerX" secondItem="ASy-V3-Fva" secondAttribute="centerX" id="JnP-Nf-lMg"/>
-                            <constraint firstItem="hBd-cg-prn" firstAttribute="top" secondItem="1jD-K6-DqL" secondAttribute="bottom" constant="5" id="Kd3-gP-8u4"/>
                             <constraint firstItem="0jQ-JQ-VLC" firstAttribute="centerX" secondItem="ASy-V3-Fva" secondAttribute="centerX" id="Lms-34-2Lp"/>
                             <constraint firstItem="5QW-Pm-Cgf" firstAttribute="leading" secondItem="ylC-ED-lkM" secondAttribute="leading" constant="20" id="asG-qZ-7gP"/>
-                            <constraint firstItem="0jQ-JQ-VLC" firstAttribute="top" secondItem="5QW-Pm-Cgf" secondAttribute="bottom" constant="25" id="bC2-3T-BWs"/>
+                            <constraint firstItem="0jQ-JQ-VLC" firstAttribute="top" secondItem="5QW-Pm-Cgf" secondAttribute="bottom" constant="10" id="cGA-Sz-jyi"/>
+                            <constraint firstItem="5QW-Pm-Cgf" firstAttribute="top" secondItem="hBd-cg-prn" secondAttribute="bottom" constant="5" id="cXA-A6-N1L"/>
                             <constraint firstItem="hBd-cg-prn" firstAttribute="leading" secondItem="ylC-ED-lkM" secondAttribute="leading" constant="20" id="dCb-L7-8Aj"/>
+                            <constraint firstItem="ylC-ED-lkM" firstAttribute="trailing" secondItem="nzl-91-qUu" secondAttribute="trailing" constant="20" id="dds-vv-Bhp"/>
                             <constraint firstItem="ylC-ED-lkM" firstAttribute="trailing" secondItem="0jQ-JQ-VLC" secondAttribute="trailing" constant="20" id="eIE-P0-6qL"/>
                             <constraint firstItem="ylC-ED-lkM" firstAttribute="trailing" secondItem="5QW-Pm-Cgf" secondAttribute="trailing" constant="20" id="lY3-5V-yoC"/>
+                            <constraint firstItem="nzl-91-qUu" firstAttribute="top" secondItem="ylC-ED-lkM" secondAttribute="top" constant="10" id="rbu-Vc-5u0"/>
+                            <constraint firstItem="1jD-K6-DqL" firstAttribute="top" secondItem="nzl-91-qUu" secondAttribute="bottom" constant="10" id="uME-mO-sV0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="News Details" id="uMM-UR-JHP"/>
+                    <connections>
+                        <outlet property="newsDetailContent" destination="0jQ-JQ-VLC" id="E9L-jg-wci"/>
+                        <outlet property="newsDetailDateTimeLabel" destination="hBd-cg-prn" id="l8s-OB-Pho"/>
+                        <outlet property="newsDetailImage" destination="5QW-Pm-Cgf" id="wxO-gK-38y"/>
+                        <outlet property="newsDetailPublisherLabel" destination="1jD-K6-DqL" id="Y2A-s6-aRn"/>
+                        <outlet property="newsDetailTitleLabel" destination="nzl-91-qUu" id="X1L-9j-QaI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ju8-cJ-Hug" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
