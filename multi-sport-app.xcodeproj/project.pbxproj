@@ -43,6 +43,7 @@
 		E3CF72EA282FE84A00F899B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3CF72E8282FE84A00F899B0 /* Main.storyboard */; };
 		E3CF72EC282FE84B00F899B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3CF72EB282FE84B00F899B0 /* Assets.xcassets */; };
 		E3CF72EF282FE84B00F899B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3CF72ED282FE84B00F899B0 /* LaunchScreen.storyboard */; };
+		E3ED7D5928375B9900DF4DD3 /* CustomizedTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ED7D5828375B9900DF4DD3 /* CustomizedTabbar.swift */; };
 		E3FD6DAF28366097007E6FFB /* TeamStanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FD6DAE28366097007E6FFB /* TeamStanding.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		E3CF72EB282FE84B00F899B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3CF72EE282FE84B00F899B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3CF72F0282FE84B00F899B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3ED7D5828375B9900DF4DD3 /* CustomizedTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedTabbar.swift; sourceTree = "<group>"; };
 		E3FD6DAE28366097007E6FFB /* TeamStanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStanding.swift; sourceTree = "<group>"; };
 		FD0536106D45ED8EDB38D456 /* Pods-multi-sport-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multi-sport-app.release.xcconfig"; path = "Target Support Files/Pods-multi-sport-app/Pods-multi-sport-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +185,7 @@
 		E3CCF26B28360139006BA7BC /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				E3ED7D5828375B9900DF4DD3 /* CustomizedTabbar.swift */,
 				E3CCF27228360BE8006BA7BC /* CollectionViewCells */,
 				E3CCF26C2836014A006BA7BC /* TableViewCells */,
 			);
@@ -246,6 +249,7 @@
 		E3CF72E1282FE84A00F899B0 /* multi-sport-app */ = {
 			isa = PBXGroup;
 			children = (
+				E3ED7D5A28375BE000DF4DD3 /* CustomClasses */,
 				E3CCF26B28360139006BA7BC /* CustomViews */,
 				E3ADD729283100A30090B0E1 /* Controller */,
 				E3ADD7282831009C0090B0E1 /* View */,
@@ -258,6 +262,13 @@
 				E3CF72F0282FE84B00F899B0 /* Info.plist */,
 			);
 			path = "multi-sport-app";
+			sourceTree = "<group>";
+		};
+		E3ED7D5A28375BE000DF4DD3 /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomClasses;
 			sourceTree = "<group>";
 		};
 		FC259C6E2E26B9A843F5267D /* Pods */ = {
@@ -416,6 +427,7 @@
 				63463BF128353D20008015F8 /* NewsVC.swift in Sources */,
 				636F5FEB2835F29F0078E919 /* TeamsDetailVC.swift in Sources */,
 				E3ADD72D283148820090B0E1 /* Player.swift in Sources */,
+				E3ED7D5928375B9900DF4DD3 /* CustomizedTabbar.swift in Sources */,
 				E3ADD7242830F2B00090B0E1 /* AppError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
