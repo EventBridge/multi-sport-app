@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NewsVC: UIViewController {
     
+    @IBOutlet weak var latestNewsImage: UIImageView!
+    @IBOutlet weak var latestNewsDesc: UILabel!
     @IBOutlet weak var currDateLabel: UILabel!
     @IBOutlet weak var newsTableView: UITableView!
     
+    
+    //var latestArticle = Article
     var articles: [Article] = []
 
     override func viewDidLoad() {
@@ -19,29 +24,43 @@ class NewsVC: UIViewController {
         newsTableView.delegate = self
         newsTableView.dataSource = self
         
+        //news api //get instantly after load
+        NetworkService.shared.fetchArticles(query: "nba", sortBy: "publishedAt", language: "en", domains: "espn.com") { [weak self] (result) in
+            switch result {
+            case.success(let articles):
+                self?.articles = articles
+                self?.newsTableView.reloadData()
+                //set up latest article view
+                self?.setupLatestNews(article: articles[0])
+            case.failure(let error):
+                print("The error is: \(error.localizedDescription)")
+            }
+        }
+        
         //date format
         let present = Date()    //current date
         let formatter = DateFormatter()
         formatter.dateStyle = .full        //formatter.timeStyle = .short   //show 4:12PM
         formatter.timeZone = .current
         formatter.locale = .current
-        
         currDateLabel.text = formatter.string(from: present) //show current day and date as string
+
+
+        print(articles)
         
         //register cell
         let nib = UINib(nibName: ArticleTableViewCell.identifier, bundle: nil)
         newsTableView.register(nib, forCellReuseIdentifier: ArticleTableViewCell.identifier)
+    }
+    
+    //latest news
+    func setupLatestNews(article: Article) {
+        //let date = ISO8601DateFormatter().date(from: article.publishedAt ?? "No valid date found")
+        //currDateLabel.text = date?.timeAgo()
         
-        //news api
-        NetworkService.shared.fetchArticles(query: "nba", sortBy: "publishedAt", language: "en", domains: "espn.com") { [weak self] (result) in
-            switch result {
-            case.success(let articles):
-                self?.articles = articles
-                self?.newsTableView.reloadData()
-            case.failure(let error):
-                print("The error is: \(error.localizedDescription)")
-            }
-        }
+        latestNewsImage.kf.setImage(with: URL(string: article.urlToImage ?? "No image found"))
+        //durationFromNowLabel.text = date?.timeAgo()
+        latestNewsDesc.text = article.title ?? "No title found"
     }
 }
 
