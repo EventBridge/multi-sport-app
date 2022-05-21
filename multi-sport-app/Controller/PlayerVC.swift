@@ -53,6 +53,17 @@ extension PlayerVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.setup(player: players[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToPlayerDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? PlayerDetailVC
+        if segue.identifier == "goToPlayerDetail" {
+            destination?.player = players[(playerCollectionView.indexPathsForSelectedItems?.first?.row)!]
+        }
+    }
 }
 
 extension PlayerVC: UICollectionViewDelegateFlowLayout {
