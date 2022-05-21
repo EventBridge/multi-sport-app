@@ -15,6 +15,7 @@ struct Player: Decodable {
     let height: Height?
     let weight: Weight?
     let leagues: Leagues?
+    let notAvailableImage = "https://previews.123rf.com/images/pe3check/pe3check1710/pe3check171000054/88673746-no-image-available-sign-internet-web-icon-to-indicate-the-absence-of-image-until-it-will-be-download.jpg?fj=1"
 }
 
 
