@@ -31,6 +31,8 @@
 		E3ADD7262830F7610090B0E1 /* RapidResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ADD7252830F7610090B0E1 /* RapidResponse.swift */; };
 		E3ADD72B283100D10090B0E1 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ADD72A283100D10090B0E1 /* Team.swift */; };
 		E3ADD72D283148820090B0E1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ADD72C283148820090B0E1 /* Player.swift */; };
+		E3C9A2EC28389270002DAD4E /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C9A2EA28389270002DAD4E /* PlayerTableViewCell.swift */; };
+		E3C9A2ED28389270002DAD4E /* PlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C9A2EB28389270002DAD4E /* PlayerTableViewCell.xib */; };
 		E3CCF270283601E8006BA7BC /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CCF26E283601E8006BA7BC /* MatchTableViewCell.swift */; };
 		E3CCF271283601E8006BA7BC /* MatchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3CCF26F283601E8006BA7BC /* MatchTableViewCell.xib */; };
 		E3CCF27628360C0A006BA7BC /* TeamCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CCF27428360C0A006BA7BC /* TeamCollectionViewCell.swift */; };
@@ -89,6 +91,8 @@
 		E3ADD7252830F7610090B0E1 /* RapidResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidResponse.swift; sourceTree = "<group>"; };
 		E3ADD72A283100D10090B0E1 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		E3ADD72C283148820090B0E1 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		E3C9A2EA28389270002DAD4E /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
+		E3C9A2EB28389270002DAD4E /* PlayerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerTableViewCell.xib; sourceTree = "<group>"; };
 		E3CCF26E283601E8006BA7BC /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		E3CCF26F283601E8006BA7BC /* MatchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchTableViewCell.xib; sourceTree = "<group>"; };
 		E3CCF27428360C0A006BA7BC /* TeamCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -197,6 +201,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		E3C9A2E5283891AD002DAD4E /* PlayerTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E3C9A2EA28389270002DAD4E /* PlayerTableViewCell.swift */,
+				E3C9A2EB28389270002DAD4E /* PlayerTableViewCell.xib */,
+			);
+			path = PlayerTableViewCell;
+			sourceTree = "<group>";
+		};
 		E3CCF26B28360139006BA7BC /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +222,7 @@
 		E3CCF26C2836014A006BA7BC /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				E3C9A2E5283891AD002DAD4E /* PlayerTableViewCell */,
 				6366A13228365B8300D348E6 /* ArticleTableViewCell */,
 				E3CCF26D28360196006BA7BC /* MatchTableViewCell */,
 			);
@@ -356,6 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3C9A2ED28389270002DAD4E /* PlayerTableViewCell.xib in Resources */,
 				E3CF72EF282FE84B00F899B0 /* LaunchScreen.storyboard in Resources */,
 				E3CF72EC282FE84B00F899B0 /* Assets.xcassets in Resources */,
 				E3CF72EA282FE84A00F899B0 /* Main.storyboard in Resources */,
@@ -417,6 +432,7 @@
 			files = (
 				63463BF328353D36008015F8 /* PlayerVC.swift in Sources */,
 				6366A13528365BC500D348E6 /* ArticleTableViewCell.swift in Sources */,
+				E3C9A2EC28389270002DAD4E /* PlayerTableViewCell.swift in Sources */,
 				63463BF728356BEC008015F8 /* MatchDetailVC.swift in Sources */,
 				E3CF72E7282FE84A00F899B0 /* ViewController.swift in Sources */,
 				E3CF72E3282FE84A00F899B0 /* AppDelegate.swift in Sources */,
