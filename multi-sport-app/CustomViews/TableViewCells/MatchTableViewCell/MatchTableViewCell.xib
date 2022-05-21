@@ -9,16 +9,99 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MatchTableViewCell" rowHeight="136" id="KGk-i7-Jjw" customClass="MatchTableViewCell" customModule="multi_sport_app" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="348" height="136"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MatchTableViewCell" rowHeight="125" id="KGk-i7-Jjw" customClass="MatchTableViewCell" customModule="multi_sport_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="330" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="348" height="136"/>
+                <rect key="frame" x="0.0" y="0.0" width="330" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Type Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83g-gj-Ay4">
+                        <rect key="frame" x="18" y="13" width="129" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="qSK-3w-2Mt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVc-ZE-gm3">
+                        <rect key="frame" x="52" y="47" width="42.5" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="O6D-eD-nSW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mZu-Ko-MOf">
+                        <rect key="frame" x="16" y="46" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="b77-9M-saQ"/>
+                            <constraint firstAttribute="height" constant="20" id="dzh-E8-Ji4"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yQo-Ic-UJO">
+                        <rect key="frame" x="16" y="69" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="PYc-uP-l4z"/>
+                            <constraint firstAttribute="width" constant="20" id="VLZ-wh-FBV"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtR-HT-t2g">
+                        <rect key="frame" x="52" y="69" width="44" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="eXS-at-6T8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYx-cZ-Eu3">
+                        <rect key="frame" x="168" y="48" width="36" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dateday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7a-og-RqZ">
+                        <rect key="frame" x="254" y="29" width="61" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4w8-yL-Rqq">
+                        <rect key="frame" x="254" y="49" width="36" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWe-QK-Q5D">
+                        <rect key="frame" x="168" y="69" width="36" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kVc-ZE-gm3" firstAttribute="top" secondItem="83g-gj-Ay4" secondAttribute="bottom" constant="14" id="48Y-JV-nMl"/>
+                    <constraint firstItem="mZu-Ko-MOf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="6FZ-wo-RFK"/>
+                    <constraint firstItem="yQo-Ic-UJO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="J0J-Bf-eC8"/>
+                    <constraint firstItem="kVc-ZE-gm3" firstAttribute="leading" secondItem="mZu-Ko-MOf" secondAttribute="trailing" constant="16" id="J4P-W7-Uhd"/>
+                    <constraint firstItem="WtR-HT-t2g" firstAttribute="leading" secondItem="yQo-Ic-UJO" secondAttribute="trailing" constant="16" id="ecG-iG-t7Y"/>
+                    <constraint firstItem="83g-gj-Ay4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="fMH-8Y-jcG"/>
+                    <constraint firstItem="yQo-Ic-UJO" firstAttribute="top" secondItem="mZu-Ko-MOf" secondAttribute="bottom" constant="3" id="qbv-La-lbe"/>
+                    <constraint firstItem="mZu-Ko-MOf" firstAttribute="top" secondItem="83g-gj-Ay4" secondAttribute="bottom" constant="13" id="rmS-4n-9Uc"/>
+                    <constraint firstItem="83g-gj-Ay4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="u5I-JM-Ymh"/>
+                    <constraint firstItem="WtR-HT-t2g" firstAttribute="top" secondItem="kVc-ZE-gm3" secondAttribute="bottom" constant="5" id="vZK-0v-YhC"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-            <point key="canvasLocation" x="117.39130434782609" y="130.58035714285714"/>
+            <point key="canvasLocation" x="113.04347826086958" y="126.5625"/>
         </tableViewCell>
     </objects>
 </document>
