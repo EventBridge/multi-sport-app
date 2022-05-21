@@ -429,7 +429,7 @@
                     <navigationItem key="navigationItem" title="Player" id="AyP-gX-0re"/>
                     <connections>
                         <outlet property="playerCollectionView" destination="oeZ-KK-Ek3" id="O1J-Ft-O7w"/>
-                        <segue destination="HH4-VJ-8ZA" kind="show" id="qxX-eP-DTN"/>
+                        <segue destination="HH4-VJ-8ZA" kind="show" identifier="goToPlayerDetail" id="qxX-eP-DTN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAp-ON-N85" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -550,7 +550,7 @@
         <!--Player Details-->
         <scene sceneID="h65-8k-d5z">
             <objects>
-                <viewController id="HH4-VJ-8ZA" customClass="PlayerDetailVC" customModule="multi_sport_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerDetailVC" id="HH4-VJ-8ZA" customClass="PlayerDetailVC" customModule="multi_sport_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zah-yx-Mlm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -574,8 +574,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUo-Lv-DHr">
-                                <rect key="frame" x="161.5" y="360" width="91" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUo-Lv-DHr">
+                                <rect key="frame" x="175.5" y="360" width="63" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -631,6 +631,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Player Details" id="pOY-6G-BHz"/>
+                    <connections>
+                        <outlet property="playerBirthLabel" destination="wUo-Lv-DHr" id="yqR-HF-3cm"/>
+                        <outlet property="playerHeightLabel" destination="jg5-oD-Zbz" id="hXb-FX-XqN"/>
+                        <outlet property="playerImageView" destination="5er-dD-0Hc" id="vBn-8R-ccd"/>
+                        <outlet property="playerNameLabel" destination="Lwv-Cu-mBH" id="YkQ-5B-MwK"/>
+                        <outlet property="playerPositionLabel" destination="6VH-q8-Ad4" id="OXd-dA-7b3"/>
+                        <outlet property="playerWeightLabel" destination="JDN-YD-k8O" id="dfY-bq-rAL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqU-Bp-big" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
