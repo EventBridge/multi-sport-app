@@ -17,6 +17,7 @@ class NewsVC: UIViewController {
     @IBOutlet weak var newsTableView: UITableView!
     @IBOutlet weak var latestNewsTimeAgo: UILabel!
     @IBOutlet var imageTap: UITapGestureRecognizer!
+    @IBOutlet weak var newsSourcePopUp: UIButton!
     
     var articles: [Article] = []
 
@@ -35,8 +36,12 @@ class NewsVC: UIViewController {
         
         ProgressHUD.show()
         
+        //set up news pop up button (selection)
+        setupNewsSourceButton()
+        
+        
         //news api //get instantly after load
-        NetworkService.shared.fetchArticles(query: "nba", sortBy: "publishedAt", language: "en", domains: "nytimes.com") { [weak self] (result) in
+        NetworkService.shared.fetchArticles(query: "nba", sortBy: "publishedAt", language: "en", domains: "espn.com") { [weak self] (result) in
             switch result {
             case.success(let articles):
                 self?.articles = articles
@@ -69,8 +74,19 @@ class NewsVC: UIViewController {
         //register cell
         let nib = UINib(nibName: ArticleTableViewCell.identifier, bundle: nil)
         newsTableView.register(nib, forCellReuseIdentifier: ArticleTableViewCell.identifier)
-        
-        
+    }
+    
+    //News Source selection menu func
+    func setupNewsSourceButton() {
+        let optionClosure = {(action: UIAction) in
+            print(action.title)
+        }
+        newsSourcePopUp.menu = UIMenu(children : [
+            UIAction(title: "ESPN", state: .on, handler: optionClosure),
+            UIAction(title: "New York Times", handler: optionClosure),
+            UIAction(title: "NFL", handler: optionClosure),
+            UIAction(title: "NBA", handler: optionClosure),
+            UIAction(title: "Fox Sports", handler: optionClosure)])
     }
     
     //main news view image tapped func

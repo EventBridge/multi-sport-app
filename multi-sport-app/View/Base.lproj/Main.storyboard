@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -226,14 +227,6 @@
                                     <constraint firstAttribute="width" constant="414" id="Spe-vs-iVm"/>
                                 </constraints>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jed-S0-dFe">
-                                <rect key="frame" x="373" y="118" width="17" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="Gf3-uK-fhs"/>
-                                    <constraint firstAttribute="width" constant="17" id="hJD-a0-bNn"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="sortIcon"/>
-                            </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OjM-06-RSZ">
                                 <rect key="frame" x="20" y="336" width="374" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -254,6 +247,33 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IHj-pk-ySw">
+                                <rect key="frame" x="240" y="118" width="150" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Source" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNw-DZ-lft">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="82e-NA-ZlC"/>
+                                            <constraint firstAttribute="height" constant="20" id="pU5-np-BGP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ISh-j2-x2q">
+                                        <rect key="frame" x="0.0" y="20" width="150" height="30"/>
+                                        <menu key="menu" id="1gj-fb-FV2">
+                                            <children>
+                                                <command title="Item 1" id="j0g-Tl-44P"/>
+                                                <command title="Item 2" id="ytl-lb-0zF"/>
+                                            </children>
+                                        </menu>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" systemColor="tintColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eol-J8-uXc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -261,15 +281,15 @@
                             <constraint firstItem="eol-J8-uXc" firstAttribute="trailing" secondItem="OjM-06-RSZ" secondAttribute="trailing" constant="20" id="5AC-Si-FRS"/>
                             <constraint firstItem="9YT-dF-gdv" firstAttribute="leading" secondItem="eol-J8-uXc" secondAttribute="leading" constant="30" id="84w-g3-crr"/>
                             <constraint firstItem="ETY-4I-yYz" firstAttribute="top" secondItem="OjM-06-RSZ" secondAttribute="bottom" constant="15" id="Btc-xa-Sf0"/>
-                            <constraint firstItem="eol-J8-uXc" firstAttribute="trailing" secondItem="Jed-S0-dFe" secondAttribute="trailing" constant="24" id="FhO-k1-tWr"/>
                             <constraint firstItem="ETY-4I-yYz" firstAttribute="top" secondItem="R0T-fG-HYB" secondAttribute="bottom" constant="17" id="FlB-16-mxM"/>
-                            <constraint firstItem="Jed-S0-dFe" firstAttribute="top" secondItem="eol-J8-uXc" secondAttribute="top" constant="30" id="J7N-Cl-4K9"/>
                             <constraint firstItem="f5d-AL-Zf9" firstAttribute="top" secondItem="eol-J8-uXc" secondAttribute="top" constant="19" id="O5D-G1-XXn"/>
                             <constraint firstItem="ETY-4I-yYz" firstAttribute="leading" secondItem="eol-J8-uXc" secondAttribute="leading" id="O8R-rm-nN9"/>
                             <constraint firstItem="9YT-dF-gdv" firstAttribute="top" secondItem="mnA-cm-4NA" secondAttribute="bottom" constant="17" id="Q7H-xm-8hB"/>
                             <constraint firstItem="R0T-fG-HYB" firstAttribute="leading" secondItem="eol-J8-uXc" secondAttribute="leading" constant="20" id="RLI-BO-iHz"/>
                             <constraint firstItem="f5d-AL-Zf9" firstAttribute="leading" secondItem="eol-J8-uXc" secondAttribute="leading" constant="20" id="VSb-Lp-ihp"/>
                             <constraint firstItem="R0T-fG-HYB" firstAttribute="top" secondItem="mnA-cm-4NA" secondAttribute="bottom" constant="7" id="ZV2-8U-XXi"/>
+                            <constraint firstItem="IHj-pk-ySw" firstAttribute="top" secondItem="eol-J8-uXc" secondAttribute="top" constant="30" id="cKz-VP-IB0"/>
+                            <constraint firstItem="eol-J8-uXc" firstAttribute="trailing" secondItem="IHj-pk-ySw" secondAttribute="trailing" constant="24" id="eb8-Ms-BXa"/>
                             <constraint firstItem="OjM-06-RSZ" firstAttribute="leading" secondItem="eol-J8-uXc" secondAttribute="leading" constant="20" id="fPd-0z-pEO"/>
                             <constraint firstItem="mnA-cm-4NA" firstAttribute="leading" secondItem="eol-J8-uXc" secondAttribute="leading" constant="20" id="fpY-ZN-cif"/>
                             <constraint firstItem="ETY-4I-yYz" firstAttribute="trailing" secondItem="eol-J8-uXc" secondAttribute="trailing" id="hqv-w1-5hl"/>
@@ -285,6 +305,7 @@
                         <outlet property="latestNewsDesc" destination="OjM-06-RSZ" id="2NS-Ta-vuf"/>
                         <outlet property="latestNewsImage" destination="R0T-fG-HYB" id="ym9-EA-b7R"/>
                         <outlet property="latestNewsTimeAgo" destination="9YT-dF-gdv" id="YYT-3Y-UMf"/>
+                        <outlet property="newsSourcePopUp" destination="ISh-j2-x2q" id="Rin-1z-4Ks"/>
                         <outlet property="newsTableView" destination="ETY-4I-yYz" id="lAF-hR-YEI"/>
                         <segue destination="3Ha-J1-3Wr" kind="show" identifier="goToNewsDetail" id="vEM-Pp-pDt"/>
                     </connections>
@@ -690,7 +711,6 @@
         <image name="matchIconFill" width="42" height="26"/>
         <image name="newsIconFill" width="29" height="35"/>
         <image name="playerIconFill" width="22" height="32"/>
-        <image name="sortIcon" width="19" height="16"/>
         <image name="tableIconFill" width="33" height="22"/>
         <image name="teamIconFill" width="45" height="32"/>
         <systemColor name="systemBackgroundColor">
@@ -701,6 +721,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
