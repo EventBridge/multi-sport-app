@@ -17,8 +17,9 @@ class PlayerCollectionViewCell: UICollectionViewCell {
     
     func setup(player: Player) {
         playerImageView.kf.setImage(with: URL(string: player.notAvailableImage))
-        playerNameLabel.text = player.firstname! + player.lastname!
-        positionLabel.text = player.leagues?.standard?.pos ?? "No position found"
+        playerNameLabel.text = "\(player.firstname!) \(player.lastname!)"
+        positionLabel.text = "Position: \(player.leagues?.standard?.pos ?? "none")"
+        self.layer.cornerRadius = 20
     }
     
 

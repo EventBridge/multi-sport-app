@@ -57,7 +57,7 @@ extension PlayerVC: UICollectionViewDelegate, UICollectionViewDataSource {
 
 extension PlayerVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 180, height: 250)
+        return CGSize(width: 128, height: 200)
     }
 }
 
