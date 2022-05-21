@@ -35,7 +35,7 @@ class TeamsDetailVC: UIViewController {
         
         ProgressHUD.show()
         // fetch players
-        NetworkService.shared.fetchPlayers(team: "1", season: "2021") { [weak self] (result) in
+        NetworkService.shared.fetchPlayers(team: String(team?.id ?? 1), season: "2021") { [weak self] (result) in
             switch result {
             case.success(let players):
                 self?.players = players

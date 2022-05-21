@@ -18,7 +18,7 @@ class TeamCollectionViewCell: UICollectionViewCell {
     
     
     func setup(team: Team) {
-        logoImage.kf.setImage(with: URL(string: team.logo ?? "No image found"))
+        logoImage.kf.setImage(with: URL(string: team.logo ?? team.notAvailableImage))
         nameLabel.text = team.name ?? "No name found"
         cityLabel.text = team.city ?? "No city found"
         self.layer.cornerRadius = 20
