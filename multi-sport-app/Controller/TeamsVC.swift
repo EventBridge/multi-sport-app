@@ -27,6 +27,7 @@ class TeamsVC: UIViewController {
             switch result {
             case.success(let teams):
                 self?.teams = teams
+                self?.cullTeams();
                 //print("The decoded data is:\n \(self?.teams)")
                 self?.teamCollectionView.reloadData()
                 ProgressHUD.dismiss()
@@ -37,6 +38,14 @@ class TeamsVC: UIViewController {
         }
         
         
+    }
+    
+    private func cullTeams() {
+        for (i, team) in teams.enumerated().reversed() {
+            if team.nbaFranchise == false {
+                teams.remove(at: i)
+            }
+        }
     }
     
     private func registerCells() {
