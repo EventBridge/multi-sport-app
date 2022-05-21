@@ -20,13 +20,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDT-lP-Ctx">
                         <rect key="frame" x="0.0" y="0.0" width="128" height="200"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kU3-A3-iKU">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="5Ka-tg-7Tp"/>
-                                    <constraint firstAttribute="height" constant="128" id="kpE-d3-PrO"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgW-4c-fhv" userLabel="City">
                                 <rect key="frame" x="8" y="179" width="112" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -42,14 +35,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kU3-A3-iKU">
+                                <rect key="frame" x="5" y="5" width="118" height="118"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="Wbj-I1-2BB"/>
+                                    <constraint firstAttribute="width" constant="118" id="eNq-kf-qe5"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Z8S-jX-Lry" secondAttribute="trailing" constant="8" id="32u-1o-yRU"/>
-                            <constraint firstAttribute="trailing" secondItem="kU3-A3-iKU" secondAttribute="trailing" id="AAa-S0-Lmp"/>
+                            <constraint firstAttribute="trailing" secondItem="kU3-A3-iKU" secondAttribute="trailing" constant="5" id="AAa-S0-Lmp"/>
                             <constraint firstItem="HgW-4c-fhv" firstAttribute="top" secondItem="Z8S-jX-Lry" secondAttribute="bottom" constant="5" id="Csp-rl-hmI"/>
+                            <constraint firstItem="kU3-A3-iKU" firstAttribute="top" secondItem="TDT-lP-Ctx" secondAttribute="top" constant="5" id="Dfc-KI-6Km"/>
                             <constraint firstAttribute="bottom" secondItem="HgW-4c-fhv" secondAttribute="bottom" constant="5" id="ImS-Oc-0iH"/>
-                            <constraint firstItem="kU3-A3-iKU" firstAttribute="leading" secondItem="TDT-lP-Ctx" secondAttribute="leading" id="XE8-BJ-ss2"/>
+                            <constraint firstItem="kU3-A3-iKU" firstAttribute="leading" secondItem="TDT-lP-Ctx" secondAttribute="leading" constant="5" id="XE8-BJ-ss2"/>
                             <constraint firstItem="Z8S-jX-Lry" firstAttribute="leading" secondItem="TDT-lP-Ctx" secondAttribute="leading" constant="8" id="hFd-lY-EhY"/>
                             <constraint firstItem="HgW-4c-fhv" firstAttribute="leading" secondItem="TDT-lP-Ctx" secondAttribute="leading" constant="8" id="tm9-G4-VGg"/>
                             <constraint firstAttribute="trailing" secondItem="HgW-4c-fhv" secondAttribute="trailing" constant="8" id="v7Y-4d-QA4"/>
