@@ -8,6 +8,10 @@
 import UIKit
 
 class MatchTableViewCell: UITableViewCell {
+    
+    static let identifier = "MatchTableViewCell"
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
