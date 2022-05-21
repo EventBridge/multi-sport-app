@@ -54,6 +54,17 @@ extension TeamsVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.setup(team: teams[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToTeamsDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? TeamsDetailVC
+        if segue.identifier == "goToTeamsDetail" {
+            destination?.team = teams[(teamCollectionView.indexPathsForSelectedItems?.first?.row)!]
+        }
+    }
 }
 
 extension TeamsVC: UICollectionViewDelegateFlowLayout {
