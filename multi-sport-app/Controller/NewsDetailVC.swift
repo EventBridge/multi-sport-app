@@ -19,6 +19,7 @@ class NewsDetailVC: UIViewController {
     
     
     var article: Article?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
