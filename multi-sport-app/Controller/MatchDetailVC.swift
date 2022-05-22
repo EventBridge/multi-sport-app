@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import ProgressHUD
 
 class MatchDetailVC: UIViewController {
     
@@ -51,6 +52,8 @@ class MatchDetailVC: UIViewController {
     
     var gameTitle: String?
     var game: Game?
+    var weather: [Forecast] = []
+    var dateStrForWeather: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,13 +61,24 @@ class MatchDetailVC: UIViewController {
         let strDate = game?.date?.start //get string date from api
         
         //iso date string formatter with milliseconds(fractional seconds)
-        let isoFormatter = ISO8601DateFormatter()
-        isoFormatter.formatOptions.insert(.withFractionalSeconds)
-        
-        let isoDate = isoFormatter.date(from: strDate ?? "")
+        let isoFormat = ISO8601DateFormatter()
+        isoFormat.formatOptions.insert(.withFractionalSeconds) //....000Z
+
+        //format to display
         let formatter = DateFormatter()
         formatter.dateStyle = .full
-        dateLabel.text = formatter.string(from: isoDate!)
+
+        if isoFormat.date(from: strDate ?? "") != nil {
+            // valid format
+            let validIsoDate = isoFormat.date(from: strDate ?? "")
+            dateLabel.text = formatter.string(from: validIsoDate!)
+        } else {
+            // invalid format setup
+            let invalidIsoFormat = DateFormatter()
+            invalidIsoFormat.dateFormat = "yyyy'-'MM'-'dd" //api string date that match this format
+            let invalidIsoDate = invalidIsoFormat.date(from: strDate ?? "")
+            dateLabel.text = formatter.string(from: invalidIsoDate!)
+        }
         
         //home team
         seasonLabel.text = String(game?.season ?? 0)
@@ -77,19 +91,35 @@ class MatchDetailVC: UIViewController {
         teamVisLogo.kf.setImage(with: URL(string: game?.teams?.visitors?.logo ?? notAvailableImage))
         teamVisName.text = game?.teams?.visitors?.name
         teamVisScore.text = String(game?.scores?.visitors?.points ?? 0)
-        
+                
         //linescores
-        t1s1.text = game?.scores?.home?.linescore?[0] ?? "-"
-        t1s2.text = game?.scores?.home?.linescore?[1] ?? "-"
-        t1s3.text = game?.scores?.home?.linescore?[2] ?? "-"
-        t1s4.text = game?.scores?.home?.linescore?[3] ?? "-"
-        t1Total.text = String(game?.scores?.home?.points ?? 0)
+        if game?.scores?.home?.linescore?.count ?? 0 >= 4 {
+            t1s1.text = game?.scores?.home?.linescore?[0] ?? "-"
+            t1s2.text = game?.scores?.home?.linescore?[1] ?? "-"
+            t1s3.text = game?.scores?.home?.linescore?[2] ?? "-"
+            t1s4.text = game?.scores?.home?.linescore?[3] ?? "-"
+            t1Total.text = String(game?.scores?.home?.points ?? 0)
+        } else {
+            t1s1.text = "-"
+            t1s2.text = "-"
+            t1s3.text = "-"
+            t1s4.text = "-"
+            t1Total.text = "0"
+        }
         
-        t2s1.text = game?.scores?.visitors?.linescore?[0] ?? "-"
-        t2s2.text = game?.scores?.visitors?.linescore?[1] ?? "-"
-        t2s3.text = game?.scores?.visitors?.linescore?[2] ?? "-"
-        t2s4.text = game?.scores?.visitors?.linescore?[3] ?? "-"
-        t2Total.text = String(game?.scores?.visitors?.points ?? 0)
+        if game?.scores?.visitors?.linescore?.count ?? 0 >= 4 {
+            t2s1.text = game?.scores?.visitors?.linescore?[0] ?? "-"
+            t2s2.text = game?.scores?.visitors?.linescore?[1] ?? "-"
+            t2s3.text = game?.scores?.visitors?.linescore?[2] ?? "-"
+            t2s4.text = game?.scores?.visitors?.linescore?[3] ?? "-"
+            t2Total.text = String(game?.scores?.visitors?.points ?? 0)
+        } else {
+            t2s1.text = "-"
+            t2s2.text = "-"
+            t2s3.text = "-"
+            t2s4.text = "-"
+            t2Total.text = "0"
+        }
 
         //officials
         let strArr = game?.officials?.joined(separator: ", ")
@@ -101,6 +131,51 @@ class MatchDetailVC: UIViewController {
         arenaState.text = game?.arena?.state
         arenaCountry.text = game?.arena?.country
 
+        //show weather fetch api
+        ProgressHUD.show()
+        NetworkService.shared.fetchHistory(location: arenaCity.text ?? "New York", days: "10") { [weak self] (result) in
+            switch result {
+            case.success(let weather):
+                self?.weather = weather
+                ProgressHUD.dismiss()
+            case.failure(let error):
+                print("The error is: \(error.localizedDescription)")
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
+        
+        
 
+
+        
+        //iso date string formatter with milliseconds(fractional seconds)
+
+        //format to display
+        let newformatter = DateFormatter()
+        newformatter.dateFormat = "EEEE, MMMM, d, yyyy"
+        
+        
+        let newDate = newformatter.date(from: dateLabel.text ?? "") //
+
+        if isoFormat.date(from: strDate ?? "") != nil {
+            // valid format
+            let validIsoDate = isoFormat.date(from: strDate ?? "")
+            dateLabel.text = formatter.string(from: validIsoDate!)
+        } else {
+            // invalid format setup
+            let invalidIsoFormat = DateFormatter()
+            invalidIsoFormat.dateFormat = "yyyy'-'MM'-'dd" //api string date that match this format
+            let invalidIsoDate = invalidIsoFormat.date(from: strDate ?? "")
+            dateLabel.text = formatter.string(from: invalidIsoDate!)
+        }
+        
+        //date weather api "2020-05-22"
+        for item in weather {
+            if game?.date?.start == item.date {
+                
+            }
+        }
+        
+        
     }
 }

@@ -31,8 +31,6 @@ class MatchVC: UIViewController {
             switch result {
             case.success(let games):
                 self?.games = games
-                print(self?.games)
-
                 self?.gameTableView.reloadData()
                 ProgressHUD.dismiss()
             case.failure(let error):
