@@ -23,6 +23,8 @@
 		636F5FEB2835F29F0078E919 /* TeamsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F5FEA2835F29F0078E919 /* TeamsDetailVC.swift */; };
 		E39728D4283A12A600A90D13 /* TeamStandingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39728D2283A12A600A90D13 /* TeamStandingTableViewCell.swift */; };
 		E39728D5283A12A600A90D13 /* TeamStandingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E39728D3283A12A600A90D13 /* TeamStandingTableViewCell.xib */; };
+		E39728D7283A3A0700A90D13 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39728D6283A3A0700A90D13 /* Forecast.swift */; };
+		E39728D9283A3D4000A90D13 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39728D8283A3D4000A90D13 /* WeatherResponse.swift */; };
 		E39BC742283361F7008D68E8 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BC741283361F7008D68E8 /* Api.swift */; };
 		E39BC746283369DB008D68E8 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BC745283369DB008D68E8 /* Article.swift */; };
 		E39BC7482833728E008D68E8 /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BC7472833728E008D68E8 /* NewsResponse.swift */; };
@@ -85,6 +87,8 @@
 		CEEDE50E91EF0B1EDF9151AD /* Pods_multi_sport_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_multi_sport_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E39728D2283A12A600A90D13 /* TeamStandingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStandingTableViewCell.swift; sourceTree = "<group>"; };
 		E39728D3283A12A600A90D13 /* TeamStandingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamStandingTableViewCell.xib; sourceTree = "<group>"; };
+		E39728D6283A3A0700A90D13 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		E39728D8283A3D4000A90D13 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		E39BC741283361F7008D68E8 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		E39BC745283369DB008D68E8 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		E39BC7472833728E008D68E8 /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 				E3ADD7252830F7610090B0E1 /* RapidResponse.swift */,
 				E39BC741283361F7008D68E8 /* Api.swift */,
 				E39BC7472833728E008D68E8 /* NewsResponse.swift */,
+				E39728D8283A3D4000A90D13 /* WeatherResponse.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 				E39BC745283369DB008D68E8 /* Article.swift */,
 				E3CCF27E28364A47006BA7BC /* Game.swift */,
 				E3FD6DAE28366097007E6FFB /* TeamStanding.swift */,
+				E39728D6283A3A0700A90D13 /* Forecast.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -470,6 +476,8 @@
 				E3FD6DAF28366097007E6FFB /* TeamStanding.swift in Sources */,
 				63463BF528353D4E008015F8 /* TeamsVC.swift in Sources */,
 				E3CF72E5282FE84A00F899B0 /* SceneDelegate.swift in Sources */,
+				E39728D9283A3D4000A90D13 /* WeatherResponse.swift in Sources */,
+				E39728D7283A3A0700A90D13 /* Forecast.swift in Sources */,
 				E3CCF270283601E8006BA7BC /* MatchTableViewCell.swift in Sources */,
 				63463BF128353D20008015F8 /* NewsVC.swift in Sources */,
 				636F5FEB2835F29F0078E919 /* TeamsDetailVC.swift in Sources */,
