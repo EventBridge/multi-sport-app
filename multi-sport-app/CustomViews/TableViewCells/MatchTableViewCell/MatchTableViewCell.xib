@@ -64,16 +64,14 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dateday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7a-og-RqZ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dateday" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7a-og-RqZ">
                         <rect key="frame" x="254" y="29" width="61" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4w8-yL-Rqq">
-                        <rect key="frame" x="254" y="49" width="36" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4w8-yL-Rqq">
+                        <rect key="frame" x="279" y="54" width="36" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -88,11 +86,15 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="kVc-ZE-gm3" firstAttribute="top" secondItem="83g-gj-Ay4" secondAttribute="bottom" constant="14" id="48Y-JV-nMl"/>
+                    <constraint firstAttribute="trailing" secondItem="4w8-yL-Rqq" secondAttribute="trailing" constant="15" id="4Lh-7l-DgP"/>
                     <constraint firstItem="mZu-Ko-MOf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="6FZ-wo-RFK"/>
+                    <constraint firstItem="i7a-og-RqZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="29" id="CKU-d6-sel"/>
                     <constraint firstItem="yQo-Ic-UJO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="J0J-Bf-eC8"/>
                     <constraint firstItem="kVc-ZE-gm3" firstAttribute="leading" secondItem="mZu-Ko-MOf" secondAttribute="trailing" constant="16" id="J4P-W7-Uhd"/>
+                    <constraint firstItem="4w8-yL-Rqq" firstAttribute="top" secondItem="i7a-og-RqZ" secondAttribute="bottom" constant="5" id="O3K-Lu-lSu"/>
                     <constraint firstItem="WtR-HT-t2g" firstAttribute="leading" secondItem="yQo-Ic-UJO" secondAttribute="trailing" constant="16" id="ecG-iG-t7Y"/>
                     <constraint firstItem="83g-gj-Ay4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="fMH-8Y-jcG"/>
+                    <constraint firstAttribute="trailing" secondItem="i7a-og-RqZ" secondAttribute="trailing" constant="15" id="mXB-zi-NJd"/>
                     <constraint firstItem="yQo-Ic-UJO" firstAttribute="top" secondItem="mZu-Ko-MOf" secondAttribute="bottom" constant="3" id="qbv-La-lbe"/>
                     <constraint firstItem="mZu-Ko-MOf" firstAttribute="top" secondItem="83g-gj-Ay4" secondAttribute="bottom" constant="13" id="rmS-4n-9Uc"/>
                     <constraint firstItem="83g-gj-Ay4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="u5I-JM-Ymh"/>
@@ -101,6 +103,17 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+            <connections>
+                <outlet property="gameDateDay" destination="i7a-og-RqZ" id="TfW-A6-ZoI"/>
+                <outlet property="gameTime" destination="4w8-yL-Rqq" id="Z7X-va-p2y"/>
+                <outlet property="gameTitleLabel" destination="83g-gj-Ay4" id="Xpa-SQ-7MN"/>
+                <outlet property="homeTeamLogo" destination="mZu-Ko-MOf" id="g7L-vC-zOv"/>
+                <outlet property="homeTeamName" destination="kVc-ZE-gm3" id="dxY-EA-FMC"/>
+                <outlet property="homeTeamScore" destination="aYx-cZ-Eu3" id="sid-xm-zyx"/>
+                <outlet property="visitorTeamLogo" destination="yQo-Ic-UJO" id="NDu-ia-5XB"/>
+                <outlet property="visitorTeamName" destination="WtR-HT-t2g" id="IwS-mI-xfz"/>
+                <outlet property="visitorTeamScore" destination="MWe-QK-Q5D" id="f0g-R8-82O"/>
+            </connections>
             <point key="canvasLocation" x="113.04347826086958" y="126.5625"/>
         </tableViewCell>
     </objects>

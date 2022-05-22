@@ -91,9 +91,6 @@ class NewsVC: UIViewController {
                 switch result {
                 case.success(let articles):
                     self?.articles = articles
-                    
-                    
-                    print("Reloaded data: \(self?.articles)")
                     self?.newsTableView.reloadData()
                     //set up latest article view
                     self?.setupLatestNews(article: articles[0])
