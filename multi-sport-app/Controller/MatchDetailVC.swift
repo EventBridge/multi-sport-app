@@ -86,7 +86,7 @@ class MatchDetailVC: UIViewController {
         }
         
         //home team
-        seasonLabel.text = String(game?.season ?? 0)
+        seasonLabel.text = "Season \(String(game?.season ?? 0))"
         gameTypeNameLabel.text = gameTitle ?? ""
         teamHomeLogo.kf.setImage(with: URL(string: game?.teams?.home?.logo ?? notAvailableImage))
         teamHomeName.text = game?.teams?.home?.name
@@ -140,6 +140,8 @@ class MatchDetailVC: UIViewController {
         
         if game?.teams?.home?.name == "Golden State Warriors" {
             homeCity = "San Francisco"
+        } else if firstWord == "LA" {
+            homeCity = "Los Angeles"
         } else {
             homeCity = firstWord
         }

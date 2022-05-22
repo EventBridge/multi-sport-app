@@ -38,7 +38,7 @@ class TeamsDetailVC: UIViewController {
         NetworkService.shared.fetchPlayers(team: String(team?.id ?? 1), season: "2021") { [weak self] (result) in
             switch result {
             case.success(let players):
-                self?.players = players
+                self?.players = players                
                 self?.playerTableView.reloadData()
                 ProgressHUD.dismiss()
             case.failure(let error):
@@ -63,6 +63,10 @@ extension TeamsDetailVC: UITableViewDelegate, UITableViewDataSource {
         let cell = playerTableView.dequeueReusableCell(withIdentifier: PlayerTableViewCell.identifier, for: indexPath) as! PlayerTableViewCell
         cell.setup(player: players[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 128.0 //set row height
     }
     
 }
