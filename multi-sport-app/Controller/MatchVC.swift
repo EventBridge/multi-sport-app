@@ -31,6 +31,8 @@ class MatchVC: UIViewController {
             switch result {
             case.success(let games):
                 self?.games = games
+                print(self?.games)
+
                 self?.gameTableView.reloadData()
                 ProgressHUD.dismiss()
             case.failure(let error):
@@ -72,6 +74,7 @@ extension MatchVC: UITableViewDelegate, UITableViewDataSource {
         return games.count
     }
     
+    //setup game matches data in cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = gameTableView.dequeueReusableCell(withIdentifier: MatchTableViewCell.identifier, for: indexPath) as! MatchTableViewCell
         cell.setup(game: games[indexPath.row])
@@ -80,6 +83,25 @@ extension MatchVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0 //set row height
+    }
+    
+    //click a cell and go to news detail page
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToMatchDetail", sender: self)
+    }
+    
+    //parse data to game detail VC
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToMatchDetail" {
+            let destination = segue.destination as? MatchDetailVC
+            destination?.game = games[(gameTableView.indexPathForSelectedRow?.row)!]
+            gameTableView.deselectRow(at: gameTableView.indexPathForSelectedRow!, animated: true)
+        }
+
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning() //dispose any resources that can be recreated
     }
     
     
