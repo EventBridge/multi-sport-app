@@ -33,6 +33,10 @@ struct NetworkService {
         request(api: .nbaApi , route: .standings, method: .get, parameters: ["season": season, "league": league], completion: completion)
     }
     
+    func fetchHistory(location: String, days: String, completion: @escaping(Result<[Forecast], Error>) -> Void) {
+        request(api: .weatherApi , route: .forecast, method: .get, parameters: ["location": location, "days": days], completion: completion)
+    }
+    
     private func request<T: Decodable>(api: Api, route: Route,
                                        method: Method,
                                        parameters: [String: Any]? = nil,
@@ -59,6 +63,8 @@ struct NetworkService {
                     rapidResponse(result: result, completion: completion)
                 case .newsApi:
                     newsResponse(result: result, completion: completion)
+                case .weatherApi:
+                    weatherResponse(result: result, completion: completion)
                 }
             }
         }.resume()
@@ -113,6 +119,31 @@ struct NetworkService {
                 return
             }
             if let decodedData = response.articles {
+                completion(.success(decodedData))
+            } else {
+                completion(.failure(AppError.noData))
+            }
+        case .failure(let error):
+            completion(.failure(error))
+        }
+    }
+    
+    private func weatherResponse<T: Decodable>(result: Result<Data, Error>?,
+                               completion: (Result<T, Error>) -> Void) {
+        guard let result = result else {
+            completion(.failure(AppError.unknownError))
+            return
+        }
+        
+        switch result {
+        case .success(let data):
+            let decoder = JSONDecoder()
+            guard let response = try? decoder.decode(WeatherResponse<T>.self, from: data) else {
+                completion(.failure(AppError.errorDecoding))
+                return
+            }
+            
+            if let decodedData = response.forecast {
                 completion(.success(decodedData))
             } else {
                 completion(.failure(AppError.noData))

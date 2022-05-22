@@ -10,6 +10,7 @@ import Foundation
 enum Api {
     case nbaApi
     case newsApi
+    case weatherApi
     
     var baseUrl: String {
         switch self {
@@ -17,6 +18,8 @@ enum Api {
             return "https://api-nba-v1.p.rapidapi.com"
         case .newsApi:
             return "https://newsapi.org/v2"
+        case .weatherApi:
+            return "https://api.m3o.com/v1/weather"
         }
     }
     
@@ -33,6 +36,11 @@ enum Api {
                 "application/json": "Content-Type",
                 "X-Api-Key": "d0c4fbf91f7d41ffb06ba98475e4d793"
             ]
+        case .weatherApi:
+            return [
+                "application/json": "Content-Type",
+                "Authorization": "Bearer NWZkOWU0MmQtZDgwMS00YmNjLTllZDMtNGQ2NzgwZWVlMzlm"
+            ]
         }
     }
     
@@ -42,6 +50,8 @@ enum Api {
             return "rapidResponse"
         case .newsApi:
             return "newsResponse"
+        case .weatherApi:
+            return "weatherResponse"
         }
     }
 }
