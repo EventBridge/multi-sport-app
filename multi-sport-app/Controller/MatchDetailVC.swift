@@ -46,6 +46,11 @@ class MatchDetailVC: UIViewController {
     @IBOutlet weak var arenaState: UILabel!
     @IBOutlet weak var arenaCountry: UILabel!
     
+    //weather
+    @IBOutlet weak var maxTemp: UILabel!
+    @IBOutlet weak var minTemp: UILabel!
+    @IBOutlet weak var chanceOfRain: UILabel!
+    @IBOutlet weak var weatherCond: UILabel!
     
     
     let notAvailableImage = "https://previews.123rf.com/images/pe3check/pe3check1710/pe3check171000054/88673746-no-image-available-sign-internet-web-icon-to-indicate-the-absence-of-image-until-it-will-be-download.jpg?fj=1"
@@ -53,7 +58,7 @@ class MatchDetailVC: UIViewController {
     var gameTitle: String?
     var game: Game?
     var weather: [Forecast] = []
-    var dateStrForWeather: String?
+    var homeCity: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,12 +136,44 @@ class MatchDetailVC: UIViewController {
         arenaState.text = game?.arena?.state
         arenaCountry.text = game?.arena?.country
 
+        let firstWord = game?.teams?.home?.name?.components(separatedBy: " ").first
+        
+        if game?.teams?.home?.name == "Golden State Warriors" {
+            homeCity = "San Francisco"
+        } else {
+            homeCity = firstWord
+        }
+        
         //show weather fetch api
         ProgressHUD.show()
-        NetworkService.shared.fetchHistory(location: arenaCity.text ?? "New York", days: "10") { [weak self] (result) in
+        NetworkService.shared.fetchHistory(location: homeCity ?? "", days: "10") { [weak self] (result) in
             switch result {
             case.success(let weather):
                 self?.weather = weather
+                
+                //format to display
+                let newformatter = DateFormatter()
+                newformatter.dateFormat = "EEEE, MMMM, d, yyyy"
+                let newDate = newformatter.date(from: self?.dateLabel.text ?? "") //string to date
+                let newf = DateFormatter()
+                newf.dateFormat = "yyyy-MM-dd"
+                let newStrDate = newf.string(from: newDate!)
+                print(newStrDate)
+                
+                //date weather api "2020-05-22"
+                for item in weather {
+                    if newStrDate == item.date {
+                        self?.maxTemp.text = String(item.max_temp_c ?? 0)
+                        self?.minTemp.text = String(item.min_temp_c ?? 0)
+                        self?.chanceOfRain.text = String(item.chance_of_rain ?? 0)
+                        self?.weatherCond.text = item.condition ?? "N/A"
+
+                    }
+                }
+                
+                
+                
+                
                 ProgressHUD.dismiss()
             case.failure(let error):
                 print("The error is: \(error.localizedDescription)")
@@ -147,34 +184,6 @@ class MatchDetailVC: UIViewController {
         
 
 
-        
-        //iso date string formatter with milliseconds(fractional seconds)
-
-        //format to display
-        let newformatter = DateFormatter()
-        newformatter.dateFormat = "EEEE, MMMM, d, yyyy"
-        
-        
-        let newDate = newformatter.date(from: dateLabel.text ?? "") //
-
-        if isoFormat.date(from: strDate ?? "") != nil {
-            // valid format
-            let validIsoDate = isoFormat.date(from: strDate ?? "")
-            dateLabel.text = formatter.string(from: validIsoDate!)
-        } else {
-            // invalid format setup
-            let invalidIsoFormat = DateFormatter()
-            invalidIsoFormat.dateFormat = "yyyy'-'MM'-'dd" //api string date that match this format
-            let invalidIsoDate = invalidIsoFormat.date(from: strDate ?? "")
-            dateLabel.text = formatter.string(from: invalidIsoDate!)
-        }
-        
-        //date weather api "2020-05-22"
-        for item in weather {
-            if game?.date?.start == item.date {
-                
-            }
-        }
         
         
     }
