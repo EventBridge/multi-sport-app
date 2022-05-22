@@ -94,7 +94,12 @@ extension MatchVC: UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToMatchDetail" {
             let destination = segue.destination as? MatchDetailVC
+            
+            //pass the title to game details VC so dont have to make the teamWon function again
             destination?.game = games[(gameTableView.indexPathForSelectedRow?.row)!]
+            let cell = gameTableView.cellForRow(at: gameTableView.indexPathForSelectedRow!) as! MatchTableViewCell
+            destination?.gameTitle = cell.gameTitleLabel.text
+            
             gameTableView.deselectRow(at: gameTableView.indexPathForSelectedRow!, animated: true)
         }
 
