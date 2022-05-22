@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RnN-3Z-z9G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RnN-3Z-z9G">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
@@ -357,19 +357,40 @@
                                 <rect key="frame" x="10" y="184" width="394" height="614"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3N-Zd-yud">
+                                <rect key="frame" x="20" y="108" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="d01-xK-TAl">
+                                <rect key="frame" x="18" y="142" width="131" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="datePickerTapped:" destination="etG-Pg-der" eventType="valueChanged" id="pYO-Vf-QbW"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kl3-Ns-mSe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ydg-oN-GjU" firstAttribute="centerX" secondItem="QMt-a9-AWW" secondAttribute="centerX" id="CGu-AB-wTe"/>
+                            <constraint firstItem="d01-xK-TAl" firstAttribute="top" secondItem="QMt-a9-AWW" secondAttribute="top" constant="142" id="E6y-ec-pGo"/>
+                            <constraint firstItem="Kl3-Ns-mSe" firstAttribute="trailing" secondItem="d01-xK-TAl" secondAttribute="trailing" constant="265" id="Hoo-Wk-XQZ"/>
                             <constraint firstItem="Kl3-Ns-mSe" firstAttribute="trailing" secondItem="Ydg-oN-GjU" secondAttribute="trailing" constant="10" id="Ncn-CU-i1I"/>
                             <constraint firstItem="Kl3-Ns-mSe" firstAttribute="bottom" secondItem="Ydg-oN-GjU" secondAttribute="bottom" constant="15" id="Nsa-vn-YHP"/>
+                            <constraint firstItem="d3N-Zd-yud" firstAttribute="top" secondItem="Kl3-Ns-mSe" secondAttribute="top" constant="20" id="SxG-U2-wAI"/>
+                            <constraint firstItem="Kl3-Ns-mSe" firstAttribute="trailing" secondItem="d3N-Zd-yud" secondAttribute="trailing" constant="308" id="U1y-uZ-JU2"/>
                             <constraint firstItem="Ydg-oN-GjU" firstAttribute="leading" secondItem="Kl3-Ns-mSe" secondAttribute="leading" constant="10" id="YmX-io-3zy"/>
+                            <constraint firstItem="d3N-Zd-yud" firstAttribute="leading" secondItem="Kl3-Ns-mSe" secondAttribute="leading" constant="20" id="n73-eu-Enl"/>
+                            <constraint firstItem="d01-xK-TAl" firstAttribute="leading" secondItem="Kl3-Ns-mSe" secondAttribute="leading" constant="18" id="tOF-qu-09S"/>
                             <constraint firstItem="Ydg-oN-GjU" firstAttribute="top" secondItem="Kl3-Ns-mSe" secondAttribute="top" constant="96" id="wvR-C5-Isr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Match" id="A2D-cj-0u4"/>
                     <connections>
+                        <outlet property="datePicker" destination="d01-xK-TAl" id="ZFd-yP-Njy"/>
+                        <outlet property="gameTableView" destination="Ydg-oN-GjU" id="dSU-39-E2d"/>
                         <segue destination="63y-cO-Xhd" kind="show" id="Yx0-al-2H4"/>
                     </connections>
                 </viewController>
@@ -474,6 +495,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s5m-bG-hbp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Games" image="matchIconFill" id="HpZ-P6-DUt"/>
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1E3-XI-Ubc">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

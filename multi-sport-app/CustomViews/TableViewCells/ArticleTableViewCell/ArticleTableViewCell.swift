@@ -22,7 +22,7 @@ class ArticleTableViewCell: UITableViewCell {
         
         //get the date string from api with format ISO 8601 YYYY-MM-DD`T`HH-mm-ss+Z
         //exclude the locale and timeZone setting
-        let date = ISO8601DateFormatter().date(from: article.publishedAt ?? "No valid date found")
+        let date = ISO8601DateFormatter().date(from: article.publishedAt ?? "")
         
         newsImageView.kf.setImage(with: URL(string: article.urlToImage ?? "No image found"))
         durationFromNowLabel.text = date?.timeAgo()
