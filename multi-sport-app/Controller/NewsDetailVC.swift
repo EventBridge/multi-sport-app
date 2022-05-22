@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import SafariServices
 
 class NewsDetailVC: UIViewController {
     
@@ -39,4 +40,19 @@ class NewsDetailVC: UIViewController {
         newsDetailContent.text = article?.content ?? "No content found"
 
     }
+    
+    func showArticle() {
+        if let url = URL(string: article?.url ?? "www.google.com") {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
+        }
+    }
+    
+    @IBAction func readMoreClicked(_ sender: Any) {
+        showArticle()
+    }
+    
 }
