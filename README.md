@@ -7,7 +7,7 @@
   <img src="https://imgur.com/dPSa1NA.png" width=200>
 </p>
 
-Sports App grabbing real time data from various APIs, with weather api forecast on upcomming game days. News page with multiple news source choices.
+Sports App grabbing real-time data from various APIs, with weather API forecast on upcoming game days. News page with multiple news source choices.
 
 ##
 Contributors:
