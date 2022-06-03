@@ -1,7 +1,15 @@
 # multi-sport-app
 
-GitHub: https://github.com/EventBridge/multi-sport-app
+<p float="left">
+  <img src="https://i.imgur.com/Eqh91GJ.png" width=200>
+  <img src="https://i.imgur.com/RNXhWZd.png" width=200>
+  <img src="https://imgur.com/efpAKNC.png" width=200>
+  <img src="https://imgur.com/dPSa1NA.png" width=200>
+</p>
 
+Sports App grabbing real time data from various APIs, with weather api forecast on upcomming game days. News page with multiple news source choices.
+
+##
 Contributors:
 1. Vincent Tran - 13858030 - vincent.tran-2@student.uts.edu.au
 3. Abdul Rehman - 13407061 - Abdulrehman-1@student.uts.edu.au
@@ -12,6 +20,6 @@ Contributions:
 2. Abdul: Graphic design, prototyping, presentation, collaboration on code research
 3. Angus: Storyboard, Figma Prototypes, Date Formatting, news, matches
 
-# Prerequisites
+## Prerequisites
 1. Navigate to file path
 2. pod install
